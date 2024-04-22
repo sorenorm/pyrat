@@ -793,7 +793,7 @@ def Reports(df_list,list_name,bodypart,fields=None,filter=0.3,fps=30):
         lista.append(dist)
         lista.append(vMedia)
         if type(fields) != type(None): 
-            interacts,_ = rat.Interaction(df_list[i], bodypart, fields)
+            interacts,_ = rat.Interaction(df_list[i], bodypart, fields, fps = fps)
             for i in range(len(fields)):
                 lista.append(interacts["obj"][interacts["obj"] == i+1].count())
                 lista.append((interacts["end"][interacts["obj"] == i+1]-interacts["start"][interacts["obj"] == i+1]).sum())
